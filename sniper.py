@@ -18,11 +18,11 @@ testStart = testStart.json()
 for player in testStart["myTeam"]:
     if player["summonerId"] == summId:
         cellId = player["cellId"]
-for actor in testStart["actions"][0][0]:
+for actor in testStart["actions"][0]:
     if actor["actorCellId"] == cellId:
         selectId = actor["id"]
 req = requests.patch(
-        "https://127.0.0.1:" + creds[0] + "/lol-champ-select/v1/session/actions/" + selectId,
+        "https://127.0.0.1:" + creds[0] + "/lol-champ-select/v1/session/actions/" + str(selectId) + "",
         json={"championId":champId},
         verify=False,
         headers=headerjson,
