@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-import passgetter, getid, requests
+import passgetter, getid, requests, getsummid
+summId = getsummid.getSummId(input("Enter your account name: "))
 creds = passgetter.getCreds()
 champId = getid.getChampId(input("Enter champ name: "))
 headerjson={"Accept": "application/json"}
@@ -13,9 +14,15 @@ while not checkStart:
         auth=('riot', creds[1]))
     if testStart.status_code == 200:
         checkStart = True
+testStart = testStart.json()
+for player in testStart["myTeam"]:
+    if player["summonerId"] == summId:
+        cellId = player["cellId"]
+for actor in testStart["actions"][0][0]:
+    if actor["actorCellId"] == cellId:
+        selectId = actor["id"]
 req = requests.patch(
-        #"https://127.0.0.1:" + creds[0] + "/lol-champ-select/v1/session/actions/1",
-        "https://127.0.0.1:53523/lol-champ-select/v1/session/actions/1",
+        "https://127.0.0.1:" + creds[0] + "/lol-champ-select/v1/session/actions/" + selectId,
         json={"championId":champId},
         verify=False,
         headers=headerjson,
