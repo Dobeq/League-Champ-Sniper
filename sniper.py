@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import passgetter, getid, requests, getsummid
-summId = getsummid.getSummId(input("Enter your account name: "))
+#summId = getsummid.getSummId(input("Enter your account name: "))
+summId = 0
 creds = passgetter.getCreds()
 champId = getid.getChampId(input("Enter champ name: "))
 headerjson={"Accept": "application/json"}
@@ -16,8 +17,8 @@ while not checkStart:
         checkStart = True
 testStart = testStart.json()
 for player in testStart["myTeam"]:
-    #if player["summonerId"] == summId:
-    if player["summonerId"] == 2173835401:
+    print(player['summonerId'])
+    if player["summonerId"] == summId:
         cellId = player["cellId"]
 for actor in testStart["actions"][0]:
     if actor["actorCellId"] == cellId:
