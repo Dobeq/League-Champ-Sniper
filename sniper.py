@@ -16,7 +16,8 @@ while not checkStart:
         checkStart = True
 testStart = testStart.json()
 for player in testStart["myTeam"]:
-    if player["summonerId"] == summId:
+    #if player["summonerId"] == summId:
+    if player["summonerId"] == 2173835401:
         cellId = player["cellId"]
 for actor in testStart["actions"][0]:
     if actor["actorCellId"] == cellId:
