@@ -2,7 +2,7 @@
 def getCreds():
     path = input("enter the league path: ")
     if path == "":
-        path = "C:/Riot Games/PBE"
+        path = "C:/Riot Games/League of Legends"
     with open(path + "/lockfile", 'r+') as file:
         text = file.read()
         split = text.split(':')
