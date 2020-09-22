@@ -7,7 +7,7 @@ step 2: put them in a folder
 
 (thanks to pupix for these)
 
-step 3: go to the league folder/RADS/projects/league_client/releases/[latest version]/deploy/system.yaml
+step 3: go to the league folder/system.yaml
 
 step 4: open the file
 
