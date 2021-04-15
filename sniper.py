@@ -2,8 +2,6 @@
 
 import passgetter, getid, requests, getsummid
 summId = getsummid.getSummId(input("Enter your account name: "))
-if summId == "":
-    summId = "gecgecgecgecgec"
 creds = passgetter.getCreds()
 champId = getid.getChampId(input("Enter champ name: "))
 headerjson={"Accept": "application/json"}
