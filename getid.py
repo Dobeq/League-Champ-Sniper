@@ -7,6 +7,9 @@ def getChampId(name):
         return 523
     if name == 'samira':
         return 360
+    if name == 'gwen':
+        return 887
+    #this would be a lot easier if the url didn't have the version
     champs = requests.get("http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json")
     champs = champs.json()
     name = name.lower()
