@@ -10,4 +10,4 @@ step 3: go to the riot dev site and get an api key
 
 step 4: run sniper.py through command prompt, do what it says
 
-(it's supposed to give you constant errors until you connect, don't worry
+as soon as you start getting https errors, you're good to start queue
