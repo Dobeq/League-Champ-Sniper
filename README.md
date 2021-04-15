@@ -1,5 +1,6 @@
 # League Champ Sniper
 lets you get your champ in blind
+
 step 0: install python
 
 step 1: download the files
